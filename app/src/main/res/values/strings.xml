@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Receitas</string>
+    <string name="title_activity_view_sign_up">ViewSignUp</string>
+    <string name="title_activity_sign_up_view_model">SignUpViewModel</string>
+    <string name="title_activity_view_accounts_screen">ViewAccountsScreen</string>
+    <string name="title_activity_username_screen">UsernameScreen</string>
+    <string name="title_activity_sign_in">SignIn</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_search_navigation">SearchNavigation</string>
+    <string name="title_activity_settings_view">SettingsView</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_navigation_setup">NavigationSetup</string>
+    <string name="title_activity_persona_data">PersonaData</string>
+    <string name="title_activity_email_settings">EmailSettings</string>
+    <string name="title_activity_password_settings">PasswordSettings</string>
+    <string name="title_activity_title_recipe">titleRecipe</string>
+    <string name="title_activity_recipe">Recipe</string>
+    <string name="title_activity_image_recipe">ImageRecipe</string>
+    <string name="title_activity_account_user">AccountUser</string>
+    <string name="title_activity_custom_recipe_main">CustomRecipeMain</string>
+    <string name="title_activity_click_recipe">ClickRecipe</string>
+    <string name="title_activity_loading_screen">LoadingScreen</string>
+    <string name="title_activity_another_user_click">AnotherUserClick</string>
+    <string name="title_activity_screen_back">ScreenBack</string>
+    <string name="title_activity_change_password_view_sign_up">ChangePasswordViewSignUp</string>
+
+</resources>
