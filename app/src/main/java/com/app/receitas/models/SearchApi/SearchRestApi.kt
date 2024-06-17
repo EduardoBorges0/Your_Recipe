@@ -12,7 +12,7 @@ interface SearchRestApi {
     companion object {
         private val retrofitServices: SearchRestApi by lazy {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://18.117.79.152:8080/")
+                .baseUrl("API Address")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             retrofit.create(SearchRestApi::class.java)
