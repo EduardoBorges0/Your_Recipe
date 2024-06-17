@@ -16,7 +16,7 @@ interface DeleteRestApi {
     companion object {
         private val retrofitServices: DeleteRestApi by lazy {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://18.117.79.152:8080/")
+                .baseUrl("API Adress")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             retrofit.create(DeleteRestApi::class.java)
