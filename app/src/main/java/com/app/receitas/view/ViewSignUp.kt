@@ -78,7 +78,6 @@ fun SignUp() {
 
     val (emailValue, setEmailValue) = remember { mutableStateOf("") }
     val (passwordValue, setPasswordValue) = remember { mutableStateOf("") }
-    val loading = false
     val showAlertDialog = remember { mutableStateOf(false) }
     Box(
         modifier = Modifier

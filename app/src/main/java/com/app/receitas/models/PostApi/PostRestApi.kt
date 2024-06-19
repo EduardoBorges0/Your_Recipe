@@ -14,7 +14,7 @@ interface PostRestApi {
     companion object {
         private val retrofitServices: PostRestApi by lazy {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://18.117.79.152:8080/")
+                .baseUrl("API Address")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             retrofit.create(PostRestApi::class.java)

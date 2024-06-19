@@ -82,10 +82,16 @@ private fun SettingsComposable() {
                 Text(text = "Dados Pessoais")
             }
             Button(
+<<<<<<< HEAD
                 onClick = {
                           val intent = Intent(context, AboutView::class.java)
                     context.startActivity(intent)
 
+=======
+                onClick = { 
+                 val intent = Intent(context, AboutView::class.java)
+                    context.startActivity(intent)
+>>>>>>> e926bb76ed83072726abde0cbd66fb94d42e79f8
                 },
                 colors = ButtonDefaults.buttonColors(YellowButton, Color.White),
                 shape = RoundedCornerShape(4.dp),
