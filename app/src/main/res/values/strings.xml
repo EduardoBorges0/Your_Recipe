@@ -23,5 +23,6 @@
     <string name="title_activity_another_user_click">AnotherUserClick</string>
     <string name="title_activity_screen_back">ScreenBack</string>
     <string name="title_activity_change_password_view_sign_up">ChangePasswordViewSignUp</string>
+    <string name="title_activity_about_view">AboutView</string>
 
 </resources>

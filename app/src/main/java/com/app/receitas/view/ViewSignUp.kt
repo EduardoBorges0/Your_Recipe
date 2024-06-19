@@ -21,6 +21,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,6 +40,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -71,6 +74,7 @@ class ViewSignUp : ComponentActivity() {
 fun SignUp() {
     val viewModel: SignUpViewModel = viewModel()
     val context = LocalContext.current as ComponentActivity
+    val (passwordVisible, setPasswordVisible) = remember { mutableStateOf(false) }
 
     val (emailValue, setEmailValue) = remember { mutableStateOf("") }
     val (passwordValue, setPasswordValue) = remember { mutableStateOf("") }
@@ -114,17 +118,25 @@ fun SignUp() {
                     )
                 )
                 TextField(
-                    visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier
                         .clip(RoundedCornerShape(8.dp))
                         .width(320.dp),
                     value = passwordValue,
                     onValueChange = setPasswordValue,
                     label = { Text("Password") },
-                   colors = TextFieldDefaults.colors(
-                        focusedIndicatorColor = Color.Transparent, unfocusedIndicatorColor = Color.Transparent
-                   )
+                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                    trailingIcon = {
+                        val image = if (passwordVisible) R.drawable.baseline_visibility_24 else R.drawable.baseline_visibility_off_24
+                        IconButton(onClick = { setPasswordVisible(!passwordVisible) }) {
+                            Icon(painter = painterResource(id = image), contentDescription = "Toggle password visibility")
+                        }
+                    },
+                    colors = TextFieldDefaults.colors(
+                        focusedIndicatorColor = Color.Transparent,
+                        unfocusedIndicatorColor = Color.Transparent
+                    )
                 )
+
                 Column (
                     modifier = Modifier
                         .padding(horizontal = 50.dp)
@@ -134,7 +146,7 @@ fun SignUp() {
                         .height(40.dp)
                         .align(Alignment.Start)
                         .clickable {
-                           val intent = Intent(context, ChangePasswordViewSignUp::class.java)
+                            val intent = Intent(context, ChangePasswordViewSignUp::class.java)
                             context.startActivity(intent)
                         },
                 ){

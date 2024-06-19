@@ -26,6 +26,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.app.receitas.R
+import com.app.receitas.view.Settings.PersonalData.AboutView
 import com.app.receitas.view.Settings.PersonalData.PersonaData
 import com.app.receitas.view.navigations.ui.theme.ReceitasTheme
 import com.app.receitas.view.ui.theme.YellowButton
@@ -81,7 +82,11 @@ private fun SettingsComposable() {
                 Text(text = "Dados Pessoais")
             }
             Button(
-                onClick = {  },
+                onClick = {
+                          val intent = Intent(context, AboutView::class.java)
+                    context.startActivity(intent)
+
+                },
                 colors = ButtonDefaults.buttonColors(YellowButton, Color.White),
                 shape = RoundedCornerShape(4.dp),
                 modifier = Modifier

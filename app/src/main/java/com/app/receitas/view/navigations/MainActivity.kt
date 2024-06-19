@@ -113,7 +113,9 @@ class MainActivity : ComponentActivity() {
 
                 Scaffold(
                     bottomBar = {
-                        NavigationBar {
+                        NavigationBar(
+
+                        ) {
                             items.forEachIndexed { index, item ->
                                 NavigationBarItem(
                                     selected = selectedItemIndex == index,
@@ -134,9 +136,11 @@ class MainActivity : ComponentActivity() {
                                             } else {
                                                 item.unselectedIcon
                                             },
-                                            contentDescription = item.title
+                                            contentDescription = item.title,
+
                                         )
-                                    }
+                                    },
+
                                 )
                             }
                         }
@@ -270,7 +274,9 @@ fun MainScreen(viewModel: MainViewModelApi) {
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
                     fontSize = 18.sp,
-                    modifier = Modifier.padding(horizontal = 30.dp).padding(bottom = 5.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 30.dp)
+                        .padding(bottom = 5.dp)
                 )
                 Text(text = "By ${recipe.author}", color = Color.White, fontSize = 14.sp)
             }
